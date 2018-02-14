@@ -11,8 +11,8 @@
         android:layout_width="171dp"
         android:layout_height="29dp"
         android:text="bæta við stað"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintBottom_toTopOf="@+id/addLocation"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,20 +22,22 @@
         android:id="@+id/createNewPark"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
+        android:onClick="SubmitParkToDB"
         android:text="búa til nýjan stað"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="447dp"
-        android:onClick="SubmitParkToDB"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addExtra"
+        tools:layout_editor_absoluteX="123dp" />
 
     <EditText
         android:id="@+id/addLocation"
-        android:layout_width="171dp"
-        android:layout_height="44dp"
+        android:layout_width="223dp"
+        android:layout_height="60dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text|textPersonName"
         android:text="Hvar er staðurinn?"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="81dp" />
+        app:layout_constraintBottom_toTopOf="@+id/addInside"
+        app:layout_constraintTop_toBottomOf="@+id/createNew"
+        tools:layout_editor_absoluteX="13dp" />
 
     <EditText
         android:id="@+id/addInside"
@@ -44,35 +46,39 @@
         android:ems="10"
         android:inputType="textMultiLine"
         android:text="Er staðurinn inni"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="184dp" />
+        app:layout_constraintBottom_toTopOf="@+id/addInfo"
+        app:layout_constraintTop_toBottomOf="@+id/addLocation"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/addInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text|textPersonName"
         android:text="Upplýsingar um stað"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="272dp" />
+        app:layout_constraintBottom_toTopOf="@+id/addExtra"
+        app:layout_constraintTop_toBottomOf="@+id/addInside"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/addExtra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="text|textPersonName"
         android:text="Fleira"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="360dp" />
+        app:layout_constraintBottom_toTopOf="@+id/createNewPark"
+        app:layout_constraintTop_toBottomOf="@+id/addInfo"
+        tools:layout_editor_absoluteX="16dp" />
 
     <CheckBox
         android:id="@+id/isInside"
         android:layout_width="33dp"
         android:layout_height="32dp"
         android:text="CheckBox"
-        tools:layout_editor_absoluteX="301dp"
-        tools:layout_editor_absoluteY="195dp" />
+        app:layout_constraintBottom_toTopOf="@+id/createNewPark"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="301dp" />
 
 </android.support.constraint.ConstraintLayout>
